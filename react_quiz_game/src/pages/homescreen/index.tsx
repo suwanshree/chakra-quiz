@@ -7,6 +7,9 @@ import { QuestionProps } from '@/interface/index';
 const Homepage = () => {
     const [questions, setQuestions] = useState<QuestionProps[]>([]);
     const [questionNumber, setQuestionNumber] = useState(0);
+    const [startQuiz, setStartQuiz] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [gameOver, setGameOver] = useState(false);
 
     useEffect (() => {
         const fetchQuestions = async () => {
@@ -24,12 +27,18 @@ const Homepage = () => {
 
     return (
         <div>
-            <Questioncard questions={questions[questionNumber].question}
-            category={questions[questionNumber].category}
-            callback={checkAnswer}
-            totalQuestions={totalQuestions}
-            questionNumber={questionNumber}
-            />
+            {!loading && !gameOver && startQuiz && (
+                <Questioncard
+                    questions={questions[questionNumber].question}
+                    category={questions[questionNumber].category}
+                    callback={checkAnswer}
+                    totalQuestions={totalQuestions}
+                    questionNumber={questionNumber}
+                />
+            )}
+            {!startQuiz && (
+                <>Start</>
+            )}
         </div>
     )
 }
