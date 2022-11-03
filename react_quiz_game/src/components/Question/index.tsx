@@ -1,5 +1,6 @@
 import {Box, Heading, Flex} from "@chakra-ui/react";
 import {QuestionCardProps} from "@/interface/index";
+import Appbutton from "@/components/Button";
 
 const Questioncard: React.FC<QuestionCardProps>= ({
     questions,
@@ -25,10 +26,18 @@ const Questioncard: React.FC<QuestionCardProps>= ({
 
             <Flex>
                 <Box>
-                    Button
+                    <Appbutton
+                        colorScheme="purple"
+                        variant="outline"
+                        value="False"
+                        width="full"
+                        onClick={callback}
+                    />
                 </Box>
             </Flex>
         </Box>
         </>
     )
 }
+
+export default Questioncard;

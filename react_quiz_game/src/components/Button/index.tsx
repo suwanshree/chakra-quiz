@@ -5,7 +5,7 @@ const Appbutton: React.FC<ButtonProps> = ({
     value,
     onClick,
     colorScheme,
-    varaint,
+    variant,
     className,
     disabled,
     width,
@@ -15,7 +15,7 @@ const Appbutton: React.FC<ButtonProps> = ({
             <Button
                 onClick={(event) => onClick(event)}
                 colorScheme={colorScheme}
-                variant={varaint}
+                variant={variant}
                 className={className}
                 disabled={disabled}
                 w={width}
@@ -24,3 +24,5 @@ const Appbutton: React.FC<ButtonProps> = ({
     )
 
 }
+
+export default Appbutton;
