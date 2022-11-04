@@ -22,3 +22,5 @@ const Appspinner: React.FC<SpinnerProps> = ({
         </>
     )
 };
+
+export default Appspinner;
